@@ -18,7 +18,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OUTPUT_FOLDER: release_notes
-          USE_MILESTONE_TITLE: "false"
       - name: Publish release
         uses: actions/create-release@v1
         env:
