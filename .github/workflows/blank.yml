@@ -18,6 +18,8 @@ jobs:
         uses: metcalfc/changelog-generator@v1.0.0
         with:
           myToken: ${{ secrets.GITHUB_TOKEN }}
+      - name: Get the changelog
+        run: echo "${{ steps.changelog.outputs.changelog }}"
       - name: Publish release
         uses: actions/create-release@v1
         env:
