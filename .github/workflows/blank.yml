@@ -21,9 +21,5 @@ jobs:
       - name: Get the changelog
         run: echo "${{ steps.changelog.outputs.changelog }}"
       - name: Publish release
-        uses: ncipollo/release-action@v1
-        with:
-          name: ${{ steps.tag_version.outputs.new_tag }}
-          body: ${{ steps.changelog.outputs.changelog }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          replacesArtifacts: false
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
