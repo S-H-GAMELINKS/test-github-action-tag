@@ -23,5 +23,7 @@ jobs:
       - name: Publish release
         uses: softprops/action-gh-release@v1
         with:
+          name: ${{ steps.tag_version.outputs.new_version }}
+          tag_name: ${{ steps.tag_version.outputs.new_tag }}
           body: ${{ steps.changelog.outputs.changelog }}
           
