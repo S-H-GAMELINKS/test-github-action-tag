@@ -26,3 +26,4 @@ jobs:
           name: ${{ steps.tag_version.outputs.new_tag }}
           body: ${{ steps.changelog.outputs.changelog }}
           token: ${{ secrets.GITHUB_TOKEN }}
+          replacesArtifacts: false
